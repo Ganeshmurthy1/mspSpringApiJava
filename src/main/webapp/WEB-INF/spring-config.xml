@@ -34,6 +34,7 @@
    <list>	 
 	 <value>com.model.responseMessage</value>
 	 <value>com.model.stockData</value> 
+	 <value>com.model.companyModel</value> 
    </list>
   </property>
   <property name="hibernateProperties">
@@ -53,7 +54,8 @@
  
  <bean id="persistenceExceptionTranslationPostProcessor"
   class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
-   <bean id="stkDao" class="com.stockReportDao.stockDao" />
+   <bean id="stkDao" class="com.allDao.stockReportDao.stockDao" />
+   <bean id="compDao" class="com.allDao.companyDao.companyDetailsDao"></bean>
  
  
 

@@ -1,4 +1,4 @@
-package com.stockReportDao;
+package com.allDao.stockReportDao;
 
 import java.util.List;
 

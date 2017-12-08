@@ -1,5 +1,6 @@
-package companyDao;
+package com.allDao.companyDao;
 
+import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -27,5 +28,23 @@ public class companyDetailsDao {
 		}
 		return compData;
 	}
+	
+	public companyModel signIn(companyModel logData) {
+		Session session=null;
+		 
+		try{
+			session = sessionFactory.openSession();
+			Criteria cr = session.createCriteria(companyModel.class);
+			 
+			
+			
+		}catch (HibernateException h){
+			
+		}
+		
+		return logData;
+		
+	}
 
 }
+

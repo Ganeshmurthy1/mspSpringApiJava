@@ -8,9 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.allDao.stockReportDao.stockDao;
 import com.model.responseMessage;
 import com.model.stockData;
-import com.stockReportDao.stockDao;
+ 
 
 @RestController
 @RequestMapping(value= "/stock")

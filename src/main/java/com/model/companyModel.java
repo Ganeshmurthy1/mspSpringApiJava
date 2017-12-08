@@ -14,15 +14,15 @@ public class companyModel implements Serializable{
 	@Id
 	@GeneratedValue
 	private Long id;
-	private Long cid;
+	private String cid;
 	private String companyName;
 	private String mailID;
 	private String password;
 	private String address;
 	private String city;
-	private String state;
-	private String Country;
-	private Long MobileNum;
+	private String state;	 
+	private String country;	 
+	private Long mobileNum;
 	
 	public Long getId() {
 		return id;
@@ -30,10 +30,11 @@ public class companyModel implements Serializable{
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public Long getCid() {
+ 
+	public String getCid() {
 		return cid;
 	}
-	public void setCid(Long cid) {
+	public void setCid(String cid) {
 		this.cid = cid;
 	}
 	public String getCompanyName() {
@@ -73,17 +74,18 @@ public class companyModel implements Serializable{
 		this.state = state;
 	}
 	public String getCountry() {
-		return Country;
+		return country;
 	}
 	public void setCountry(String country) {
-		Country = country;
+		this.country = country;
 	}
 	public Long getMobileNum() {
-		return MobileNum;
+		return mobileNum;
 	}
 	public void setMobileNum(Long mobileNum) {
-		MobileNum = mobileNum;
+		this.mobileNum = mobileNum;
 	}
+
 	
 	
 	

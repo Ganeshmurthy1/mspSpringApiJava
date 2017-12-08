@@ -6,10 +6,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.allDao.companyDao.companyDetailsDao;
 import com.model.companyModel;
 import com.model.responseMessage;
-
-import companyDao.companyDetailsDao;
+ 
+ 
 
 @RestController
 @RequestMapping(value="/compReg")
@@ -32,6 +33,15 @@ public class company {
 			res.setMessage(message); 
 		}
 		
+		return res;
+		
+	}
+	@RequestMapping(value="/login", method = RequestMethod.POST, headers={"Accept=application/json"})
+	public responseMessage companyLogin(@RequestBody companyModel compData){
+		companyModel compLogin = compDao.signIn(compData);
+		responseMessage res = new responseMessage();
+		String message = "";
+		 
 		return res;
 		
 	}
