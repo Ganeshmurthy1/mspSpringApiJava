@@ -5,6 +5,8 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Conjunction;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.model.companyModel;
@@ -31,12 +33,22 @@ public class companyDetailsDao {
 	
 	public companyModel signIn(companyModel logData) {
 		Session session=null;
-		 
+		companyModel returnData= null;
 		try{
 			session = sessionFactory.openSession();
 			Criteria cr = session.createCriteria(companyModel.class);
-			 
+			Conjunction conjuct = Restrictions.conjunction();
 			
+			conjuct.add(Restrictions.eq("mailID", logData.getMailID()));
+			conjuct.add(Restrictions.eq("password", logData.getPassword()));
+			cr.add(conjuct);
+			logData = (companyModel) cr.uniqueResult();
+			System.out.println("logData"+logData);
+		/*	if(logData !=null && logData.getId()>0){
+				returnData = logData;
+			}else{
+				returnData = null;
+			}*/
 			
 		}catch (HibernateException h){
 			
